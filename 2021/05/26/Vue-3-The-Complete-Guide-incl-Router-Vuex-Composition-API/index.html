@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="Learn Vue.js - in its latest version - step by step from scratch. Learn how to build highly reactive web applications using one of the most popular frameworks! No matter what metric you’re looking at">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)">
+<meta property="og:url" content="http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/index.html">
+<meta property="og:site_name" content="Awesome Courses">
+<meta property="og:description" content="Learn Vue.js - in its latest version - step by step from scratch. Learn how to build highly reactive web applications using one of the most popular frameworks! No matter what metric you’re looking at">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-26T15:56:31.000Z">
+<meta property="article:modified_time" content="2021-05-27T06:48:49.227Z">
+<meta property="article:author" content="糖糖爸">
+<meta property="article:tag" content="Vue 3">
+<meta property="article:tag" content="Vuex">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Composition API">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" "Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/sponsors/">赞助者</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post " href="/2021/05/27/Introduction-to-Dev-Tools-v3/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post " href="/2021/05/26/Vue-360/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top " href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post " href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&text=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&is_video=false&description=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)&body=Check out this article: http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&name=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&t=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">糖糖爸</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-05-26T15:56:31.000Z" itemprop="datePublished">2021-05-26</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Composition-API/" rel="tag">Composition API</a>, <a class="tag-link-link" href="/tags/JavaScript/" rel="tag">JavaScript</a>, <a class="tag-link-link" href="/tags/Vue-3/" rel="tag">Vue 3</a>, <a class="tag-link-link" href="/tags/Vuex/" rel="tag">Vuex</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Learn Vue.js - in its latest version - step by step from scratch. Learn how to build highly reactive web applications using one of the most popular frameworks!</p>
+<p>No matter what metric you’re looking at (Google Trends, Github Stars, Tweets …) - VueJS is the shooting star in the world of JavaScript frameworks - it’s just awesome!</p>
+<p>This course teaches the latest version of Vue (Vue.js 3) in detail and from scratch. We’ll cover all the basics, but we won’t stop there - this course also delves into advanced concepts such as the Composition API introduced in Vue 3.</p>
+<p>This course covers everything!</p>
+<p>We’ll start with the very basics of what Vue.js is and how it works before we move on to more advanced and advanced topics, but I’ll be honest: this is too much to fit into one sentence, so this is what you’re in. In this course you will learn:</p>
+<ul>
+<li>What is VueJS and why use it?</li>
+<li>The basics (including basic syntax, understanding patterns, and more!)</li>
+<li>How to display reactive data and listen to events</li>
+<li>DOM interaction (list rendering, conditionally attaching / detaching elements …)</li>
+<li>Setting up the development environment and workflow</li>
+<li>Using components (and which components to start with)</li>
+<li>A deep look behind the scenes in Vue</li>
+<li>Binding to form input</li>
+<li>Sending HTTP Requests to Server APIs</li>
+<li>Authentication and Vue</li>
+<li>How to make your app prettier with animations and transitions</li>
+<li>How to Build a Great Single Page Application (SPA) with Routing</li>
+<li>How to improve state management with Vuex</li>
+<li>How to deploy the application<br>And much more …</li>
+</ul>
+<p>All of these topics are taught through real-world examples and demo projects. This course is full of exercises, challenges, and larger running projects that allow you to practice what you have learned.</p>
+<p>Along with many other small projects, we will build a couple of large main projects:</p>
+<p>Monster Slayer is a browser-based game 100% powered by Vue.<br>Learning Resource Manager is a web-based application that allows you to manage (add, remove, list) your favorite learning resources.<br>Find a Coach Application is a web application that allows you to register / login, register as a coach, list and filter available coaches, and send messages to coaches.</p>
+<p><a target="_blank" rel="noopener" href="https://pro.academind.com/p/vue-3-the-complete-guide">Course</a></p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/sponsors/">赞助者</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&text=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&is_video=false&description=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)&body=Check out this article: http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&title=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&name=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=http://example.com/2021/05/26/Vue-3-The-Complete-Guide-incl-Router-Vuex-Composition-API/&t=Vue 3 - The Complete Guide(incl.Router,Vuex,Composition API)"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2021
+    糖糖爸
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">首页</a></li>
+         
+          <li><a href="/about/">关于</a></li>
+         
+          <li><a href="/sponsors/">赞助者</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
